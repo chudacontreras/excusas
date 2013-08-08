@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>title of page</title>
+        <link rel="stylesheet"  href="style.css">
+        <script src="jquery-1.9.1.min.js"></script>
+        <script>
+            var c1 = [
+                "En cuanto arreglemos el conteo de recursos",
+                "En cuanto completemos las pruebas",
+                "En cuanto hayamos optimizado el código",
+                "Apenas nos arreglen el bug",
+                "Cuando se solvente el problema de instalación",
+                "Cuando averiguamos por qué se cae el proceso",
+                "Cuando hayamos mejorado el rendimiento",
+                "En cuanto completemos la restauración",
+                "Apenas instalemos el último parche",
+                "En cuanto terminemos la implementación"
+            ];
+            var c2 = [
+                "de la interfaz XML",
+                "del sistema de colas",
+                "del buffer de entrada",
+                "del gestor de peticiones",
+                "de las clases de abstracción",
+                "del recolector de basura",
+                "de la nueva versión",
+                "del caché",
+                "de la versión customizada",
+                "del conversor de protocolo"
+            ];
+            var c3 = [
+                "del directorio LDAP",
+                "de la maquina virtual de Java",
+                "del proxy inverso",
+                "del gestor de cluster",
+                "del brocker de objetos distribuidos",
+                "de la capa de presentación",
+                "del despachador de certificados",
+                "de la base de datos",
+                "del servidor",
+                "del acelerador de transacciones"
+            ];
+            $(document).ready(function () {
+                function refrescar() {
+                    id1 = Math.floor((Math.random()* c1.length)); 
+                    id2 = Math.floor((Math.random()* c2.length)); 
+                    id3 = Math.floor((Math.random()* c3.length)); 
+                    $('#excusa').text(c1[id1] + ' ' + c2[id2] + ' ' + c3[id3]);
+                }
+                $('#btnRefrescar').click(function(){
+                    refrescar();
+                });
+                refrescar();
+            });
+        </script>
+        <style>
+            body {
+                text-align: center;
+                background: #fff url(background.jpg);
+            }
+            h1 {
+                margin: 0;
+                padding: 0;
+                font-size: 24px;
+                margin-top: 50px;
+            }
+            #excusa {
+            }
+            #btnRefrescar {
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 14px;
+                color: #40423f;
+                padding: 20px 30px;
+                background: -moz-linear-gradient(
+                    top,
+                    #ffffff 0%,
+                    #ffffff 50%,
+                    #b5b5b5);
+                background: -webkit-gradient(
+                    linear, left top, left bottom, 
+                    from(#ffffff),
+                    color-stop(0.50, #ffffff),
+                    to(#b5b5b5));
+                border-radius: 10px;
+                border: 5px solid #838a80;
+                box-shadow:
+                    0px 0px 10px rgba(000,000,000,0.5),
+                    inset 0px 0px 3px rgba(255,255,255,1);
+                text-shadow:
+                    0px -1px 0px rgba(000,000,000,0.2),
+                    0px 1px 0px rgba(255,255,255,1);
+            }
+        </style>
+    </head>
+    <body>
+        <h1>¿Cuándo terminamos el proyecto?</h1>
+        <p id="excusa">ola k ase</p><br />
+        <input type="button" id="btnRefrescar" value="Refrescar" />
+    </body>
+</html>
